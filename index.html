@@ -2,59 +2,137 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <style type="text/tailwindcss">
-      @theme {
-        --color-primary: #052F4A;
-      }
-      body {
-        font-family: 'Lato', sans-serif;
-      }
-      .pricing-tab.active {
-        background-color: #052F4A;
-        color: white;
-      }
-      .pricing-tab {
-        transition: all 0.3s ease;
-      }
-    </style>
-  </head>
-  <body class="bg-slate-100 min-h-screen">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+    @theme {
+      --color-primary: #052F4A;
+    }
+    body {
+      font-family: 'Lato', sans-serif;
+    }
+    .nav-link {
+      position: relative;
+      font-weight: 700;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 50%;
+      background-color: #052F4A;
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
+    .nav-link:hover::after {
+      width: 70%;
+    }
+    .nav-btn {
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px rgba(5, 47, 74, 0.1);
+    }
+    .nav-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 8px rgba(5, 47, 74, 0.2);
+    }
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    .nav-shadow {
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
+    }
+  </style>
+</head>
 
-    <!-- Navigation --> 
-<nav class="bg-white shadow-sm p-4">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+<body class="bg-slate-100 min-h-screen">
+  <div class="nav-container">
+
+    <!-- Navbar -->
+   <nav class="bg-white shadow-md p-5 navbar sticky top-0 z-10">
+  <div class="max-w-7xl mx-auto px-2 flex justify-between items-center">
     <div class="flex items-center">
-      <!-- Logo avec image favicon -->
-      <div class="flex items-center space-x-2">
-        <img src="images/icon_large_dark.png" alt="Logo" class="h-12 w-12">
+      <!-- Logo avec animation au survol -->
+      <div class="flex items-center space-x-2 transition-transform duration-300 hover:scale-105">
+        <img src="images/icon_large_dark.png" alt="Logo" class="h-12 w-12 object-contain">
       </div>
-      <div class="hidden md:block ml-10">
-        <div class="flex space-x-4">
-          <a href="#" class="text-sky-900 hover:text-sky-700 px-3 py-2 text-sm font-medium">Features</a>
-          <a href="#" class="text-sky-900 hover:text-sky-700 px-3 py-2 text-sm font-medium">Reviews</a>
-          <a href="#" class="text-sky-900 hover:text-sky-700 px-3 py-2 text-sm font-medium">Pricing</a>
-          <a href="#" class="text-sky-900 hover:text-sky-700 px-3 py-2 text-sm font-medium">FAQ's</a>
-          <a href="#" class="text-sky-900 hover:text-sky-700 px-3 py-2 text-sm font-medium">Contact</a>
+      <div class="hidden md:block ml-8">
+        <div class="flex space-x-6">
+          <a href="#" class="nav-link text-sky-900 hover:text-sky-800 px-3 py-2 text-sm">Features</a>
+          <a href="#" class="nav-link text-sky-900 hover:text-sky-800 px-3 py-2 text-sm">Reviews</a>
+          <a href="#" class="nav-link text-sky-900 hover:text-sky-800 px-3 py-2 text-sm">Pricing</a>
+          <a href="#" class="nav-link text-sky-900 hover:text-sky-800 px-3 py-2 text-sm">FAQ's</a>
+          <a href="#" class="nav-link text-sky-900 hover:text-sky-800 px-3 py-2 text-sm">Contact</a>
         </div>
       </div>
     </div>
     <div>
-      <a href="#" class="bg-sky-950 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-sky-900">Open</a>
+      <a href="#" class="nav-btn bg-sky-950 text-white px-5 py-2 rounded-lg text-sm font-medium hover:bg-sky-900">Open</a>
     </div>
   </div>
 </nav>
+<div class="w-full h-6 bg-gradient-to-b from-gray-100/80 to-transparent"></div>
 
 
-    <!-- Pricing Section 1 - Blue & White -->
+
+<!-- First section -->
+<section class="bg-white pt-10 md:pt-14 pb-4 min-h-screen">
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col md:flex-row items-center justify-between md:gap-x-40">
+      <div class="w-full md:w-1/2 mb-10 md:mb-0">
+        <div class="flex items-start mb-[2.5rem]">
+          <img src="images/logo-WeekPal.png" alt="Logo" class="h-20 w-auto object-contain">
+        </div>
+
+        <h2 class="text-2xl md:text-3xl font-bold text-sky-950 mb-4">Lorem ipsum</h2>
+
+        <p class="text-sky-950 mb-6">
+          Lorem ipsum dolor sit amet consectetur. Venenatis urna mi 
+          maecenas ac etiam sit ultricies suscipit. Risus sapien scelerisque 
+          nunc suspendisse tristique nunc.
+        </p>
+        <p class="text-sky-950 mb-8">
+          Lorem ipsum dolor sit amet consectetur. Venenatis urna mi 
+          maecenas ac etiam sit ultricies suscipit. Risus sapien scelerisque 
+          nunc suspendisse tristique nunc.
+        </p>
+
+        <div class="flex flex-wrap gap-4">
+          <a href="#" class="bg-gray-200 text-sky-950 px-6 py-2 rounded-full font-medium hover:bg-gray-300">
+            Contact us
+          </a>
+          <a href="#" class="bg-sky-950 text-white px-6 py-2 rounded-full font-medium hover:bg-sky-900 flex items-center">
+            Get started
+          </a>
+        </div>
+      </div>
+
+      <!-- Laptop Image -->
+      <div class="w-full md:w-1/2">
+        <img src="images/laptop.png" alt="Laptop" class="w-full h-auto">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+    <!-- Pricing Section -->
     <div class="relative isolate px-6 py-12 sm:py-20 lg:px-8">
+      
       <!-- Background -->
       <div class="absolute inset-x-0 -top-3 -z-10 transform-gpu overflow-hidden px-36 blur-3xl" aria-hidden="true">
-        <div class="mx-auto aspect-[1155/678] w-[72.1875rem] bg-gradient-to-tr from-sky-50 to-sky-800 opacity-20"
+        <div class="mx-auto aspect-[1155/678] w-full bg-gradient-to-tr from-sky-50 to-sky-800 opacity-20"
           style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
         </div>
       </div>
@@ -62,17 +140,16 @@
       <!-- Title -->
       <div class="mx-auto max-w-4xl text-center">
         <p class="mt-2 text-5xl font-semibold tracking-tight text-sky-950 sm:text-6xl">Choose the right plan for you</p>
-      
       </div>
       <p class="mx-auto mt-6 max-w-2xl text-center text-lg text-sky-950 sm:text-xl">
-        Choose an affordable plan packed with powerful features to grow your business.
+        Choose an affordable plan packed with powerful features to stay organized.
       </p>
 
       <!-- Cards -->
       <div class="mx-auto mt-20 flex flex-col items-center gap-6 sm:flex-col md:flex-row md:justify-center max-w-6xl">
-        <!-- Hobby (left) -->
-        <div class="w-full sm:w-full md:w-[300px] rounded-3xl bg-white/60 p-8 ring-1 ring-sky-950/10 sm:p-10 scale-95 shadow-lg shadow-[#052F4A]/40">
-          <h3 class="text-base font-semibold text-sky-950">Hobby</h3>
+        <!-- Individual (left) -->
+        <div class="w-full sm:w-full md:w-72 rounded-3xl bg-white/60 p-8 ring-1 ring-sky-950/10 sm:p-10 scale-95 shadow-lg shadow-sky-950/40">
+          <h3 class="text-base font-semibold text-sky-950">Individual</h3>
           <p class="mt-4 flex items-baseline gap-x-2">
             <span class="text-4xl font-semibold tracking-tight text-sky-950">$29</span>
             <span class="text-base text-gray-500">/month</span>
@@ -111,7 +188,7 @@
         </div>
 
         <!-- Enterprise (center, main) -->
-        <div class="w-full sm:w-full md:w-[400px] relative z-10 rounded-3xl bg-sky-950 p-8 shadow-2xl ring-1 ring-gray-900/10 sm:p-10 scale-100">
+        <div class="w-full sm:w-full md:w-96 relative z-10 rounded-3xl bg-sky-950 p-8 shadow-2xl ring-1 ring-gray-900/10 sm:p-10 scale-100">
           <h3 class="text-base font-semibold text-slate-200">Enterprise</h3>
           <p class="mt-4 flex items-baseline gap-x-2">
             <span class="text-5xl font-semibold tracking-tight text-white">$99</span>
@@ -163,8 +240,8 @@
         </div>
 
         <!-- Pro (right) -->
-        <div class="w-full sm:w-full md:w-[300px] rounded-3xl bg-white/60 p-8 ring-1 ring-gray-900/10 sm:p-10 scale-95 shadow-lg shadow-[#052F4A]/40">
-          <h3 class="text-base font-semibold text-sky-950">Pro</h3>
+        <div class="w-full sm:w-full md:w-72 rounded-3xl bg-white/60 p-8 ring-1 ring-gray-900/10 sm:p-10 scale-95 shadow-lg shadow-sky-950/40">
+          <h3 class="text-base font-semibold text-sky-950">Coming soon...</h3>
           <p class="mt-4 flex items-baseline gap-x-2">
             <span class="text-4xl font-semibold tracking-tight text-sky-950">$59</span>
             <span class="text-base text-gray-500">/month</span>
@@ -208,10 +285,9 @@
       </p>
     </div>
 
-
-
-
-
-
+    <!-- Add a responsive mobile menu toggle for small screens -->
+    <script>
+      // You could add JavaScript here for mobile menu toggle functionality
+    </script>
   </body>
 </html>
