@@ -49,6 +49,43 @@
       .nav-shadow {
         box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
       }
+      /* Language dropdown styles */
+      .lang-dropdown {
+        position: relative;
+        display: inline-block;
+      }
+      .lang-dropdown-content {
+        display: none;
+        position: absolute;
+        right: 0;
+        background-color: #ffffff;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+        z-index: 51;
+        border-radius: 8px;
+        padding: 8px 0;
+        max-height: 300px;
+        overflow-y: auto;
+      }
+      .lang-dropdown-content.show {
+        display: block;
+      }
+      .lang-option {
+        display: flex;
+        align-items: center;
+        padding: 8px 16px;
+        cursor: pointer;
+        transition: background-color 0.2s;
+      }
+      .lang-option:hover {
+        background-color: #f3f4f6;
+      }
+      .flag-icon {
+        width: 24px;
+        height: 18px;
+        margin-right: 10px;
+        object-fit: contain;
+      }
     </style>
   </head>
 
@@ -82,8 +119,59 @@
         </button>
       </div>
 
-      <!-- Desktop "Open" button -->
-      <div class="hidden md:block">
+      <!-- Desktop actions: Language selector + Open button -->
+      <div class="hidden md:flex items-center space-x-4">
+        <!-- Language Dropdown -->
+        <div class="lang-dropdown">
+          <button id="langDropdownBtn" class="flex items-center space-x-1 py-2">
+            <span class="flag-container">
+              <img src="/api/placeholder/24/18" alt="EN" class="flag-icon" />
+            </span>
+            <span class="font-medium">EN</span>
+            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div id="langDropdownContent" class="lang-dropdown-content">
+            <div class="lang-option">
+              <img src="/api/placeholder/24/18" alt="EN" class="flag-icon" />
+              <span>English</span>
+            </div>
+            <div class="lang-option">
+              <img src="/api/placeholder/24/18" alt="ES" class="flag-icon" />
+              <span>Español</span>
+            </div>
+            <div class="lang-option">
+              <img src="/api/placeholder/24/18" alt="DE" class="flag-icon" />
+              <span>Deutsch</span>
+            </div>
+            <div class="lang-option">
+              <img src="/api/placeholder/24/18" alt="FR" class="flag-icon" />
+              <span>Français</span>
+            </div>
+            <div class="lang-option">
+              <img src="/api/placeholder/24/18" alt="IT" class="flag-icon" />
+              <span>Italiano</span>
+            </div>
+            <div class="lang-option">
+              <img src="/api/placeholder/24/18" alt="PT" class="flag-icon" />
+              <span>Português</span>
+            </div>
+            <div class="lang-option">
+              <img src="/api/placeholder/24/18" alt="RU" class="flag-icon" />
+              <span>Русский</span>
+            </div>
+            <div class="lang-option">
+              <img src="/api/placeholder/24/18" alt="JP" class="flag-icon" />
+              <span>日本語</span>
+            </div>
+            <div class="lang-option">
+              <img src="/api/placeholder/24/18" alt="CN" class="flag-icon" />
+              <span>中文</span>
+            </div>
+          </div>
+        </div>
+        <!-- Open Button -->
         <a href="#" class="nav-btn bg-sky-950 text-white px-5 py-2 rounded-lg text-base font-medium hover:bg-sky-900">Open</a>
       </div>
     </div>
@@ -95,7 +183,32 @@
       <a href="#pricing" class="block text-sky-900 hover:text-sky-800 py-2">Pricing</a>
       <a href="#faq" class="block text-sky-900 hover:text-sky-800 py-2">FAQ's</a>
       <a href="#contact" class="block text-sky-900 hover:text-sky-800 py-2">Contact</a>
-      <a href="#" class="block mt-2 nav-btn bg-sky-950 text-white px-5 py-2 rounded-lg text-base font-medium hover:bg-sky-900">Open</a>
+      
+      <!-- Mobile language selector -->
+      <div class="py-2 mt-2">
+        <span class="text-gray-500">Language</span>
+        <div class="grid grid-cols-2 gap-2 mt-1">
+          <div class="lang-option">
+            <img src="/api/placeholder/24/18" alt="EN" class="flag-icon" />
+            <span>English</span>
+          </div>
+          <div class="lang-option">
+            <img src="/api/placeholder/24/18" alt="ES" class="flag-icon" />
+            <span>Español</span>
+          </div>
+          <div class="lang-option">
+            <img src="/api/placeholder/24/18" alt="FR" class="flag-icon" />
+            <span>Français</span>
+          </div>
+          <div class="lang-option">
+            <img src="/api/placeholder/24/18" alt="DE" class="flag-icon" />
+            <span>Deutsch</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Mobile open button -->
+      <a href="#" class="block mt-2 nav-btn bg-sky-950 text-white px-5 py-2 rounded-lg text-base font-medium hover:bg-sky-900 text-center">Open</a>
     </div>
   </nav>  
 </div>
@@ -103,12 +216,50 @@
 <script>
   const burger = document.getElementById("burger");
   const mobileMenu = document.getElementById("mobileMenu");
+  const langDropdownBtn = document.getElementById("langDropdownBtn");
+  const langDropdownContent = document.getElementById("langDropdownContent");
 
+  // Toggle mobile menu
   burger.addEventListener("click", () => {
     mobileMenu.classList.toggle("hidden");
   });
-</script>
 
+  // Toggle language dropdown
+  langDropdownBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    langDropdownContent.classList.toggle("show");
+  });
+
+  // Close dropdown when clicking outside
+  document.addEventListener("click", () => {
+    if (langDropdownContent.classList.contains("show")) {
+      langDropdownContent.classList.remove("show");
+    }
+  });
+
+  // Prevent dropdown from closing when clicking inside it
+  langDropdownContent.addEventListener("click", (e) => {
+    e.stopPropagation();
+  });
+
+  // Language selection functionality
+  const langOptions = document.querySelectorAll(".lang-option");
+  langOptions.forEach(option => {
+    option.addEventListener("click", function() {
+      const flagImg = this.querySelector("img");
+      const langText = this.querySelector("span").innerText;
+      const flagCode = flagImg.getAttribute("alt");
+      
+      // Update button with selected language
+      const btnFlag = langDropdownBtn.querySelector("img");
+      btnFlag.setAttribute("alt", flagCode);
+      langDropdownBtn.querySelector("span:not(.flag-container)").innerText = flagCode;
+      
+      // Close dropdown
+      langDropdownContent.classList.remove("show");
+    });
+  });
+</script>
 
 <!-- First section -->
 <section class="bg-white pt-32 md:pt-48 pb-38">
@@ -162,11 +313,11 @@
     </div>
 
     <!-- Desktop view -->
-    <div class="hidden md:flex md:flex-row md:items-start md:gap-24">
-      <!-- Image on the left (desktop only) -->
-      <div class="md:w-1/2">
+    <div class="hidden md:flex md:flex-row md:items-center md:gap-24">
+      <!-- Image on the left (desktop only) - INCREASED SIZE AND CENTERED -->
+      <div class="md:w-1/2 flex items-center justify-center">
         <div class="relative">
-          <img src="images/laptop.png" alt="Application Features" class="relative rounded-2xl w-full h-auto object-cover" />
+          <img src="images/laptopandimg.png" alt="Application Features" class="relative rounded-2xl w-full h-auto object-cover scale-125 transform origin-center" />
         </div>
       </div>
       
@@ -222,8 +373,9 @@
     <div class="md:hidden flex space-x-4 overflow-x-auto pb-6 snap-x snap-mandatory">
       <!-- Feature Card 1 -->
       <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-6 shadow-xl shadow-sky-950/20 hover:shadow-sky-950/30 transition-all duration-300 min-w-[100%] snap-start transform hover:scale-105 hover:transition-all">
-        <div class="w-full mb-6 flex justify-center">
-          <img src="images/laptop.png" alt="Smart Calendar Feature" class="rounded-xl w-full h-auto object-cover shadow-lg" />
+        <div class="w-full my-8 flex items-center justify-center h-48">
+          <!-- INCREASED SIZE and CENTERED for mobile view -->
+          <img src="images/laptop.png" alt="Smart Calendar Feature" class="rounded-xl w-full h-auto object-cover shadow-lg scale-125 transform origin-center" />
         </div>
         <h3 class="text-xl font-semibold text-sky-950 mb-2">Smart Calendar</h3>
         <p class="text-sky-950">
@@ -233,8 +385,9 @@
       
       <!-- Feature Card 2 -->
       <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-6 shadow-xl shadow-sky-950/20 hover:shadow-sky-950/30 transition-all duration-300 min-w-[100%] snap-start transform hover:scale-105 hover:transition-all">
-        <div class="w-full mb-6 flex justify-center">
-          <img src="images/laptop.png" alt="Task Management Feature" class="rounded-xl w-full h-auto object-cover shadow-lg" />
+        <div class="w-full my-8 flex items-center justify-center h-48">
+          <!-- INCREASED SIZE and CENTERED for mobile view -->
+          <img src="images/laptop.png" alt="Task Management Feature" class="rounded-xl w-full h-auto object-cover shadow-lg scale-125 transform origin-center" />
         </div>
         <h3 class="text-xl font-semibold text-sky-950 mb-2">Task Management</h3>
         <p class="text-sky-950">
@@ -244,8 +397,8 @@
       
       <!-- Feature Card 3 -->
       <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-6 shadow-xl shadow-sky-950/20 hover:shadow-sky-950/30 transition-all duration-300 min-w-[100%] snap-start transform hover:scale-105 hover:transition-all">
-        <div class="w-full mb-6 flex justify-center">
-          <img src="images/laptop.png" alt="Team Collaboration Feature" class="rounded-xl w-full h-auto object-cover shadow-lg" />
+        <div class="w-full my-8 flex items-center justify-center h-48">
+          <img src="images/laptop.png" alt="Team Collaboration Feature" class="rounded-xl w-full h-auto object-cover shadow-lg scale-125 transform origin-center" />
         </div>
         <h3 class="text-xl font-semibold text-sky-950 mb-2">Team Collaboration</h3>
         <p class="text-sky-950">
@@ -507,7 +660,7 @@
     </p>
   </div>
   
-  <!-- Add a bottom spacer to help with transition -->
+
   <div class="h-16 bg-gradient-to-b from-white/0 to-white"></div>
 </div>
 
