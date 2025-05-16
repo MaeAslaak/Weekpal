@@ -119,13 +119,13 @@
         </button>
       </div>
 
-      <!-- Desktop actions: Language selector + Open button -->
+      <!--Language selector -->
       <div class="hidden md:flex items-center space-x-4">
-        <!-- Language Dropdown -->
+       
         <div class="lang-dropdown">
           <button id="langDropdownBtn" class="flex items-center space-x-1 py-2">
             <span class="flag-container">
-              <img src="/api/placeholder/24/18" alt="EN" class="flag-icon" />
+              <img src="https://flagcdn.com/w40/gb.png" alt="EN" class="flag-icon" />
             </span>
             <span class="font-medium">EN</span>
             <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -133,40 +133,40 @@
             </svg>
           </button>
           <div id="langDropdownContent" class="lang-dropdown-content">
-            <div class="lang-option">
-              <img src="/api/placeholder/24/18" alt="EN" class="flag-icon" />
+            <div class="lang-option" data-lang-code="en">
+              <img src="https://flagcdn.com/w40/gb.png" alt="EN" class="flag-icon" />
               <span>English</span>
             </div>
-            <div class="lang-option">
-              <img src="/api/placeholder/24/18" alt="ES" class="flag-icon" />
+            <div class="lang-option" data-lang-code="es">
+              <img src="https://flagcdn.com/w40/es.png" alt="ES" class="flag-icon" />
               <span>Español</span>
             </div>
-            <div class="lang-option">
-              <img src="/api/placeholder/24/18" alt="DE" class="flag-icon" />
+            <div class="lang-option" data-lang-code="de">
+              <img src="https://flagcdn.com/w40/de.png" alt="DE" class="flag-icon" />
               <span>Deutsch</span>
             </div>
-            <div class="lang-option">
-              <img src="/api/placeholder/24/18" alt="FR" class="flag-icon" />
+            <div class="lang-option" data-lang-code="fr">
+              <img src="https://flagcdn.com/w40/fr.png" alt="FR" class="flag-icon" />
               <span>Français</span>
             </div>
-            <div class="lang-option">
-              <img src="/api/placeholder/24/18" alt="IT" class="flag-icon" />
+            <div class="lang-option" data-lang-code="it">
+              <img src="https://flagcdn.com/w40/it.png" alt="IT" class="flag-icon" />
               <span>Italiano</span>
             </div>
-            <div class="lang-option">
-              <img src="/api/placeholder/24/18" alt="PT" class="flag-icon" />
+            <div class="lang-option" data-lang-code="pt">
+              <img src="https://flagcdn.com/w40/pt.png" alt="PT" class="flag-icon" />
               <span>Português</span>
             </div>
-            <div class="lang-option">
-              <img src="/api/placeholder/24/18" alt="RU" class="flag-icon" />
+            <div class="lang-option" data-lang-code="ru">
+              <img src="https://flagcdn.com/w40/ru.png" alt="RU" class="flag-icon" />
               <span>Русский</span>
             </div>
-            <div class="lang-option">
-              <img src="/api/placeholder/24/18" alt="JP" class="flag-icon" />
+            <div class="lang-option" data-lang-code="jp">
+              <img src="https://flagcdn.com/w40/jp.png" alt="JP" class="flag-icon" />
               <span>日本語</span>
             </div>
-            <div class="lang-option">
-              <img src="/api/placeholder/24/18" alt="CN" class="flag-icon" />
+            <div class="lang-option" data-lang-code="cn">
+              <img src="https://flagcdn.com/w40/cn.png" alt="CN" class="flag-icon" />
               <span>中文</span>
             </div>
           </div>
@@ -186,22 +186,21 @@
       
       <!-- Mobile language selector -->
       <div class="py-2 mt-2">
-        <span class="text-gray-500">Language</span>
         <div class="grid grid-cols-2 gap-2 mt-1">
-          <div class="lang-option">
-            <img src="/api/placeholder/24/18" alt="EN" class="flag-icon" />
+          <div class="lang-option" data-lang-code="en">
+            <img src="https://flagcdn.com/w40/gb.png" alt="EN" class="flag-icon" />
             <span>English</span>
           </div>
-          <div class="lang-option">
-            <img src="/api/placeholder/24/18" alt="ES" class="flag-icon" />
+          <div class="lang-option" data-lang-code="es">
+            <img src="https://flagcdn.com/w40/es.png" alt="ES" class="flag-icon" />
             <span>Español</span>
           </div>
-          <div class="lang-option">
-            <img src="/api/placeholder/24/18" alt="FR" class="flag-icon" />
+          <div class="lang-option" data-lang-code="fr">
+            <img src="https://flagcdn.com/w40/fr.png" alt="FR" class="flag-icon" />
             <span>Français</span>
           </div>
-          <div class="lang-option">
-            <img src="/api/placeholder/24/18" alt="DE" class="flag-icon" />
+          <div class="lang-option" data-lang-code="de">
+            <img src="https://flagcdn.com/w40/de.png" alt="DE" class="flag-icon" />
             <span>Deutsch</span>
           </div>
         </div>
@@ -288,7 +287,7 @@
         </div>
       </div>
       <div class="w-full md:w-1/2">
-        <img src="images/laptop.png" alt="Laptop" class="w-full md:w-[140%] h-auto md:max-w-none md:-mr-16 md:translate-x-6">
+        <img src="images/laptopandimg.png" alt="Laptop" class="w-full md:w-[140%] h-auto md:max-w-none md:-mr-16 md:translate-x-6">
       </div>
     </div>
   </div>
@@ -313,7 +312,7 @@
     </div>
 
     <!-- Desktop view -->
-    <div class="hidden md:flex md:flex-row md:items-center md:gap-24">
+    <div class="hidden md:flex md:flex-row md:items-center md:gap-32">
       <!-- Image on the left (desktop only) - INCREASED SIZE AND CENTERED -->
       <div class="md:w-1/2 flex items-center justify-center">
         <div class="relative">
@@ -369,46 +368,123 @@
       </div>
     </div>
 
-    <!-- Mobile view (carousel) -->
-    <div class="md:hidden flex space-x-4 overflow-x-auto pb-6 snap-x snap-mandatory">
-      <!-- Feature Card 1 -->
-      <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-6 shadow-xl shadow-sky-950/20 hover:shadow-sky-950/30 transition-all duration-300 min-w-[100%] snap-start transform hover:scale-105 hover:transition-all">
-        <div class="w-full my-8 flex items-center justify-center h-48">
-          <!-- INCREASED SIZE and CENTERED for mobile view -->
-          <img src="images/laptop.png" alt="Smart Calendar Feature" class="rounded-xl w-full h-auto object-cover shadow-lg scale-125 transform origin-center" />
+    <!-- Mobile view (carousel with arrows) -->
+    <div class="md:hidden relative">
+      <!-- Carousel container with hidden overflow -->
+      <div class="carousel-container overflow-hidden">
+        <div class="carousel-slides flex transition-transform duration-300 ease-in-out">
+          <!-- Feature Card 1 -->
+          <div class="carousel-slide w-full flex-shrink-0">
+            <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-5 pb-6 shadow-lg shadow-sky-950/10 m-2">
+              <div class="w-full my-4 flex items-center justify-center h-40">
+                <img src="images/laptop.png" alt="Smart Calendar Feature" class="rounded-xl w-full h-auto object-cover" />
+              </div>
+              <!-- Added vertical space here -->
+              <div class="mt-8 mb-2"></div>
+              <h3 class="text-lg font-semibold text-sky-950 mb-3">Smart Calendar</h3>
+              <p class="text-sky-950 text-sm leading-relaxed">
+                Plan your weeks with ease. Our smart calendar helps you organize your tasks and stay focused.
+              </p>
+            </div>
+          </div>
+          
+          <!-- Feature Card 2 -->
+          <div class="carousel-slide w-full flex-shrink-0">
+            <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-5 pb-6 shadow-lg shadow-sky-950/10 m-2">
+              <div class="w-full my-4 flex items-center justify-center h-40">
+                <img src="images/laptop.png" alt="Task Management Feature" class="rounded-xl w-full h-auto object-cover" />
+              </div>
+              <!-- Added vertical space here -->
+              <div class="mt-8 mb-2"></div>
+              <h3 class="text-lg font-semibold text-sky-950 mb-3">Task Management</h3>
+              <p class="text-sky-950 text-sm leading-relaxed">
+                Manage your tasks effortlessly. Prioritize effectively, and track progress.
+              </p>
+            </div>
+          </div>
+          
+          <!-- Feature Card 3 -->
+          <div class="carousel-slide w-full flex-shrink-0">
+            <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-5 pb-6 shadow-lg shadow-sky-950/10 m-2">
+              <div class="w-full my-4 flex items-center justify-center h-40">
+                <img src="images/laptop.png" alt="Team Collaboration Feature" class="rounded-xl w-full h-auto object-cover" />
+              </div>
+              <!-- Added vertical space here -->
+              <div class="mt-8 mb-2"></div>
+              <h3 class="text-lg font-semibold text-sky-950 mb-3">Team Collaboration</h3>
+              <p class="text-sky-950 text-sm leading-relaxed">
+                Foster seamless communication and collaboration within your team.
+              </p>
+            </div>
+          </div>
         </div>
-        <h3 class="text-xl font-semibold text-sky-950 mb-2">Smart Calendar</h3>
-        <p class="text-sky-950">
-          Plan your weeks with ease. Our smart calendar helps you organize your tasks and stay focused.
-        </p>
       </div>
       
-      <!-- Feature Card 2 -->
-      <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-6 shadow-xl shadow-sky-950/20 hover:shadow-sky-950/30 transition-all duration-300 min-w-[100%] snap-start transform hover:scale-105 hover:transition-all">
-        <div class="w-full my-8 flex items-center justify-center h-48">
-          <!-- INCREASED SIZE and CENTERED for mobile view -->
-          <img src="images/laptop.png" alt="Task Management Feature" class="rounded-xl w-full h-auto object-cover shadow-lg scale-125 transform origin-center" />
-        </div>
-        <h3 class="text-xl font-semibold text-sky-950 mb-2">Task Management</h3>
-        <p class="text-sky-950">
-          Manage your tasks effortlessly. Prioritize effectively, and track progress.
-        </p>
+      <!-- Navigation Arrows -->
+      <button class="carousel-arrow carousel-prev absolute top-1/2 left-2 transform -translate-y-1/2 bg-white/80 backdrop-blur-sm rounded-full p-2 shadow-lg text-sky-950 hover:bg-sky-950 hover:text-white transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+        </svg>
+      </button>
+      <button class="carousel-arrow carousel-next absolute top-1/2 right-2 transform -translate-y-1/2 bg-white/80 backdrop-blur-sm rounded-full p-2 shadow-lg text-sky-950 hover:bg-sky-950 hover:text-white transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+        </svg>
+      </button>
+      
+      <!-- Indicators -->
+      <div class="flex justify-center mt-4 space-x-2">
+        <button class="carousel-indicator w-2 h-2 rounded-full bg-sky-950 opacity-100"></button>
+        <button class="carousel-indicator w-2 h-2 rounded-full bg-sky-950 opacity-30"></button>
+        <button class="carousel-indicator w-2 h-2 rounded-full bg-sky-950 opacity-30"></button>
       </div>
       
-      <!-- Feature Card 3 -->
-      <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-6 shadow-xl shadow-sky-950/20 hover:shadow-sky-950/30 transition-all duration-300 min-w-[100%] snap-start transform hover:scale-105 hover:transition-all">
-        <div class="w-full my-8 flex items-center justify-center h-48">
-          <img src="images/laptop.png" alt="Team Collaboration Feature" class="rounded-xl w-full h-auto object-cover shadow-lg scale-125 transform origin-center" />
-        </div>
-        <h3 class="text-xl font-semibold text-sky-950 mb-2">Team Collaboration</h3>
-        <p class="text-sky-950">
-          Foster seamless communication and collaboration within your team.
-        </p>
-      </div>
+      <!-- JavaScript for carousel functionality -->
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          const slides = document.querySelectorAll('.carousel-slide');
+          const prevButton = document.querySelector('.carousel-prev');
+          const nextButton = document.querySelector('.carousel-next');
+          const indicators = document.querySelectorAll('.carousel-indicator');
+          const slidesContainer = document.querySelector('.carousel-slides');
+          
+          let currentSlide = 0;
+          const slideCount = slides.length;
+          
+          function updateCarousel() {
+            slidesContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            // Update indicators
+            indicators.forEach((indicator, index) => {
+              indicator.classList.toggle('opacity-100', index === currentSlide);
+              indicator.classList.toggle('opacity-30', index !== currentSlide);
+            });
+          }
+          
+          // Next button click
+          nextButton.addEventListener('click', function() {
+            currentSlide = (currentSlide + 1) % slideCount;
+            updateCarousel();
+          });
+          
+          // Previous button click
+          prevButton.addEventListener('click', function() {
+            currentSlide = (currentSlide - 1 + slideCount) % slideCount;
+            updateCarousel();
+          });
+          
+          // Indicator clicks
+          indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', function() {
+              currentSlide = index;
+              updateCarousel();
+            });
+          });
+        });
+      </script>
     </div>
   </div>
 </section>
-
 
 <!-- Reviews Section -->  
 <section id="reviews" class="bg-gradient-to-b from-white/10 via-[#E2EEF3]/70 to-blue-50/80 py-32">
